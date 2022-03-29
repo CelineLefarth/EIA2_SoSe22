@@ -1,0 +1,32 @@
+h1 {
+    font-family: Arial;
+}
+
+#div1 {
+    position: absolute;
+    background-color: yellow;
+    margin-left: 5%;
+    margin-top: 50px;
+    width: 40%;
+    height: 60%; 
+
+}
+
+#div2 {
+    position: absolute;
+    margin-top: 50px;
+    background-color: yellow;
+    margin-left: 55%;
+    width: 40%;
+    height: 60%;
+}
+
+#span1 {
+    position: fixed;
+    width: 245px;
+    height: fit-content;
+    font-family: Arial;
+    color: white;
+    padding: 5px;
+    background-color: black;
+}
