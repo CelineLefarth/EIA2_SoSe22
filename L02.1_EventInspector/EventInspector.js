@@ -5,6 +5,7 @@ var EventInspector;
         let body = document.querySelector("body");
         let div1 = document.querySelector("#div1");
         let div2 = document.querySelector("#div2");
+        document.addEventListener("mousemove", setInfoBox);
         body.addEventListener("keyup", logInfo);
         body.addEventListener("click", logInfo);
         div1.addEventListener("keyup", logInfo);

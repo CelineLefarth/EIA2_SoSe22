@@ -13,7 +13,7 @@ var Memory;
         //Memorypaare werden erstellt
         function createPairs() {
             let cardArray = [];
-            for (let index = 1; index <= pairsInput.valueAsNumber; index++) {
+            for (let index = 1; index <= pairsInput; index++) {
                 let cardvalue = index;
                 console.log(cardvalue);
                 cardArray.push(cardvalue);

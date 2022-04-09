@@ -9,12 +9,15 @@ namespace EventInspector {
         let div1: HTMLDivElement = <HTMLDivElement>document.querySelector("#div1");
         let div2: HTMLDivElement = <HTMLDivElement>document.querySelector("#div2");
 
+        document.addEventListener("mousemove", setInfoBox);
         body.addEventListener("keyup", logInfo);
         body.addEventListener("click", logInfo);
         div1.addEventListener("keyup", logInfo);
         div1.addEventListener("click", logInfo);
         div2.addEventListener("keyup", logInfo);
         div2.addEventListener("click", logInfo);
+
+        
     }
 
     function setInfoBox (_event: MouseEvent) : void {
