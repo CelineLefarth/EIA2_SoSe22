@@ -1,51 +1,27 @@
-namespace Memory {
-    window.addEventListener("load", function(){
-
-        const startButton : HTMLButtonElement = document.querySelector("#start");
-        const gamesettings: HTMLDivElement = document.querySelector("#gamesettings");
-        const pairsInput = document.querySelector("#pairs") as HTMLInputElement;
-        let cardArray: number[] = createPairs();  
-        
-        
-
-        startButton.addEventListener("click", createPlayfield)
+namespace MemoryGame {
     
-        function createPlayfield (){
-            gamesettings.setAttribute("style", "display:none")
+    window.addEventListener("load", handleLoad);
 
-            // randomizePairs(cardArray);
-           
-            
+    let memoryCards: string[] = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"]
 
+    function handleLoad (_event:Event) {
+        let startButton: HTMLElement = document.querySelector("#start");
+        startButton.addEventListener("click", gameStart);
+    }
 
-        }
+    function gameStart(_event:Event) {
 
-        //Memorypaare werden erstellt
-        function createPairs () {
-            let cardArray = []       
+        let gameSettings: HTMLDivElement = document.querySelector("#gamesettings");
+        gameSettings.setAttribute("style", "display:none")
         
-                for (let index = 1; index <= pairsInput; index++) {
-                    let cardvalue = index;
-                    console.log(cardvalue);
-                    
-                    cardArray.push(cardvalue)            
-                }
+        let playGround: HTMLDivElement = document.createElement("div");
+        playGround.classList.add("playGround");
 
-        return cardArray;            
-        }
+        let body: HTMLBodyElement = document.querySelector("body");
+        body.appendChild(playGround);
 
-        //Memorypaare
-        // function randomizePairs(cardArray){
-        //     for (let i = 0; i < 1000; i++) {
-        //         //Erstellen einer zufälligen Zahl
-        //         let location1 = Math.floor((Math.random() * cardArray.length));
-        //         let location2 = Math.floor((Math.random() * cardArray.length));
-        //         let tmp = cardArray[location1];
-    
-        //         cardArray[location1] = cardArray[location2];
-        //         cardArray[location2] = tmp;
-        //         }
-        //     };
- 
-    })
+        
+        
+    }
+
 }
