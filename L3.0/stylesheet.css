@@ -1,0 +1,29 @@
+.gamefield{
+    position: absolute;
+	display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+    border: none;
+    left: 40%;
+    top: 25%;
+}
+
+.gamefield div {
+    text-align: center;
+}
+
+.card {
+	text-align: center;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+}
+
+.hidden {
+	background-color: grey;
+}
+
+.hidden p {
+	display: none;
+}
