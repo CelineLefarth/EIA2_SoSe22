@@ -1,5 +1,6 @@
 namespace L09_1_OldMacDonaldsFarm {
     export class Animal {
+        
         name: string;
         animaltype: string;
         animalsound:string;
@@ -17,8 +18,10 @@ namespace L09_1_OldMacDonaldsFarm {
             this.foodamount = _foodamount;
             this.foodration = _foodration;
         
+            
         }
 
+        
         lyrics(): string {
             
             return `${this.name} the ${this.animaltype} <br><br>
@@ -33,6 +36,7 @@ namespace L09_1_OldMacDonaldsFarm {
             
          
         }
+
     }
 }
 

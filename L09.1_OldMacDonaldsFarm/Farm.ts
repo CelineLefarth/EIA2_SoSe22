@@ -5,9 +5,9 @@ namespace L09_1_OldMacDonaldsFarm {
     let animaltext: HTMLDivElement;
 
     function handleLoad(_event: Event): void {
-        //let cow: Cow = new Cow;
+        let cow: Cow = new Cow;
                 
-        let animals: Animal[] = [new Cow];
+        let animals: Animal[] = [cow];
         
 
         for (let index = 0; index <= animals.length; index++) {
@@ -22,7 +22,7 @@ namespace L09_1_OldMacDonaldsFarm {
             verse2.innerHTML = animals[index].specialFeature();
             animaltext.appendChild(verse2);
 
-            console.log(animals[index]);
+            
             
         }
     }
