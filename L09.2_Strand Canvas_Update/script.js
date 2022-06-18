@@ -49,9 +49,9 @@ var L09_2_StrandCanvas2;
     function update() {
         L09_2_StrandCanvas2.context.fillRect(0, 0, L09_2_StrandCanvas2.context.canvas.width, L09_2_StrandCanvas2.context.canvas.height);
         Hintergrund();
-        let _wasser = new L09_2_StrandCanvas2.wasser(0.2, 0.8);
+        let _wasser = new wasser(0.2, 0.8);
         _wasser.draw();
-        let _strand = new L09_2_StrandCanvas2.strand(0.5, 0.5);
+        let _strand = new strand(0.5, 0.5);
         _strand.draw();
         for (let cloud of clouds) {
             cloud.animate(1 / 700);
