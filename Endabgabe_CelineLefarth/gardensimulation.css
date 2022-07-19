@@ -1,0 +1,62 @@
+body {
+    background-image: url("./assets/bodenerde.jpg");  
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+h1 {
+    position: relative;
+    left: 390px;
+    color: white;
+}
+
+#gamesettings{
+    position: relative;
+    left: 290px;
+    width: 400px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#gamesettings button {
+    border-radius: 10px;
+    height: 30px;
+    margin-top: 10px;
+    color: #497550;
+    font-weight: bold;
+}
+
+button:hover{
+    color: white;
+    background-color: #497550;
+}
+
+#gametext {
+    padding: 20px;
+}
+
+#gameField {
+    position: relative;
+    left: 100px;
+}
+
+#markt{
+    color: white;
+    position: relative;
+    left: 830px;
+    top: -600px;
+}
+
+button {
+    margin-top: 4px;
+    padding: 4px
+}
+
+#money {
+    position: relative;
+    top: 40px;
+    left: 110px;
+    font-weight: bold;
+    color: white;
+}

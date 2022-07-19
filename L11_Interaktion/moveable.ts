@@ -7,21 +7,24 @@ export abstract class Moveable {
     velocityX: number;
     velocityY: number;
 
-    mor: number
+    mosX: number;
+    mosY: number;
 
-    constructor(_position: Vector, _velocity: Vector, _mor:number) {
+
+    constructor(_position: Vector, _velocity: Vector,  _mosX: number, _mosY: number) {
           this.posX = _position.x; 
           this.posY = _position.y; 
 
           this.velocityX = _velocity.x;
           this.velocityY = _velocity.y;
 
-          this.mor = _mor;
+          this.mosX = _mosX;
+          this.mosY = _mosY;
+
     }
 
-    abstract draw();
-    abstract update();
-    
-    abstract click?(_x: number, _y: number);
+    abstract interact?(_x: number, _y: number): void;
+        abstract draw(): void;
+        abstract update(): void;
 }
 }

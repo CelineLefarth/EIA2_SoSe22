@@ -5,13 +5,15 @@ var L11;
         posY;
         velocityX;
         velocityY;
-        mor;
-        constructor(_position, _velocity, _mor) {
+        mosX;
+        mosY;
+        constructor(_position, _velocity, _mosX, _mosY) {
             this.posX = _position.x;
             this.posY = _position.y;
             this.velocityX = _velocity.x;
             this.velocityY = _velocity.y;
-            this.mor = _mor;
+            this.mosX = _mosX;
+            this.mosY = _mosY;
         }
     }
     L11.Moveable = Moveable;

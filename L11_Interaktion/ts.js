@@ -5,55 +5,35 @@ var L11;
     let imageData;
     let canvas;
     let currentHitbox = 0;
+    L11.picked = false;
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         canvas = document.querySelector("canvas");
         L11.crc2 = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        canvas.addEventListener("click", (_e) => { clicked(_e); });
-        createBirds(20);
         createBackground();
-        createWomen();
-        createCloud();
+        canvas.addEventListener("click", (e) => { wantToClickOnHitbox(e); });
         createSchiff();
-        createSchwimmer();
         imageData = L11.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animation();
     }
     function createBackground() {
         L11.drawBackground();
     }
-    function createBirds(_nbrBird) {
-        for (let index = 0; index < 10; index++) {
-            let randomVelocityX = (Math.random()) * 8;
-            let randomVelocityY = (Math.random()) * 5;
-            move.push(new L11.Birds({ x: 0, y: 0 }, { x: randomVelocityX, y: randomVelocityY }, 0));
-        }
-    }
-    function createCloud() {
-        move.push(new L11.Cloud({ x: L11.crc2.canvas.width * .5, y: L11.crc2.canvas.height * .01 }, { x: 0.5, y: 0.8 }, 0));
-        move.push(new L11.Cloud({ x: L11.crc2.canvas.width * .1, y: L11.crc2.canvas.height * .08 }, { x: 0.5, y: 0.8 }, 0));
-    }
-    function createWomen() {
-        move.push(new L11.Women({ x: L11.crc2.canvas.width * .4, y: L11.crc2.canvas.height * .7 }, { x: 0.5, y: 0.8 }, 0));
-        move.push(new L11.Women({ x: L11.crc2.canvas.width * .8, y: L11.crc2.canvas.height * .6 }, { x: 0.5, y: 0.8 }, 0));
-    }
     function createSchiff() {
-        move.push(new L11.Boot({ x: L11.crc2.canvas.width * .9, y: L11.crc2.canvas.height * .23 }, { x: 0.7, y: 0.8 }, 0));
-        move.push(new L11.Boot({ x: L11.crc2.canvas.width * 0.2, y: L11.crc2.canvas.height * .34 }, { x: 0.7, y: 0.8 }, 0));
+        move.push(new L11.Boot({ x: L11.crc2.canvas.width * .9, y: L11.crc2.canvas.height * .23 }, { x: 0.7, y: 0.8 }));
+        move.push(new L11.Boot({ x: L11.crc2.canvas.width * 0.2, y: L11.crc2.canvas.height * .34 }, { x: 0.7, y: 0.8 }));
     }
-    function createSchwimmer() {
-        move.push(new L11.Schwimmer({ x: L11.crc2.canvas.width * 0, y: L11.crc2.canvas.height * .23 }, { x: 1.7, y: 0.8 }, 0));
-        move.push(new L11.Schwimmer({ x: L11.crc2.canvas.width * 1, y: L11.crc2.canvas.height * .34 }, { x: 1.7, y: 0.8 }, 0));
-    }
-    function clicked(_e) {
+    function wantToClickOnHitbox(_e) {
+        L11.picked = false;
         const rect = canvas.getBoundingClientRect();
-        const x = _e.clientX - rect.left;
-        const y = _e.clientY - rect.top;
+        L11.mouseX = _e.clientX - rect.left - (L11.cw / 2);
+        L11.mouseY = -1 * (_e.clientY - rect.top) + (L11.ch / 2);
+        console.log(L11.mouseX, L11.mouseY);
         currentHitbox = 0;
-        for (let moveables = move.length - 1; moveables >= 0; moveables--) {
-            move[moveables].click(x, y);
+        for (let moves = L11.Moveable.length - 1; moves >= 0; moves--) {
+            L11.Moveable[moves].interact(L11.mouseX, L11.mouseY);
             currentHitbox++;
         }
     }
